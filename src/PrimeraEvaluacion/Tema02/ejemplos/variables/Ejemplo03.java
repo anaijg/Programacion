@@ -1,4 +1,4 @@
-package PrimeraEvaluacion.Tema02.ejemplos;
+package PrimeraEvaluacion.Tema02.ejemplos.variables;
 
 public class Ejemplo03 {
     // de momento, todas las clases deben llevar un método main

@@ -1,4 +1,4 @@
-package PrimeraEvaluacion.Tema02.ejemplos;
+package PrimeraEvaluacion.Tema02.ejemplos.variables;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package PrimeraEvaluacion.Tema02.ejemplos;
+package PrimeraEvaluacion.Tema02.ejemplos.variables;
 
 public class Ejemplo02 {
     public static void main(String[] args) {
