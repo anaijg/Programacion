@@ -27,6 +27,5 @@ public class OperadoresAritméticosConEnteros {
         // resto de la división entera o módulo
         int resto = numero1 % numero2;
         System.out.println(numero1 + " % " + numero2 + " = " + resto);
-
     }
 }
