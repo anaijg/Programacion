@@ -41,9 +41,12 @@ public class Ejercicio03_DoWhile {
                 menor = n1;
             }
 
-            for (int i = menor; i <= mayor; i++) {
+        for (int i = menor; i <= mayor; i++) {
+            //, pero sólo mostrará los impares.
+            if (i % 2 != 0) {
                 System.out.print(i + " ");
             }
+        }
 
         }
     }

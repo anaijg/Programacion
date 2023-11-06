@@ -39,7 +39,10 @@ public class Ejercicio03 {
             }
 
             for (int i = menor; i <= mayor; i++) {
-                System.out.print(i + " ");
+                //, pero sólo mostrará los impares.
+                if (i % 2 != 0) {
+                    System.out.print(i + " ");
+                }
             }
 
         }
