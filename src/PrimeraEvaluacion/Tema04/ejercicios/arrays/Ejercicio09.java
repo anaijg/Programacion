@@ -21,7 +21,9 @@ public class Ejercicio09 {
             array[indice] = numero;
             // tengo que incrementar el índice a la siguiente posición
             indice++;
-            numero = teclado.nextInt(); // antes de salir tengo que pedir un nuevo número
+            if (indice < tamaño) { // o bien poner tamaño - 1 en la condición del while
+                numero = teclado.nextInt(); // antes de salir tengo que pedir un nuevo número
+            }
         }
         System.out.println(Arrays.toString(array));
     }
