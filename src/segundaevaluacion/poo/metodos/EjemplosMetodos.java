@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class EjemplosMetodos {
     public static void main(String[] args) {
         // Pedimos el primer número
-        double num1 = pedirNúmero();
+        double num1 = pedirNumero();
         // Pedimos el segundo número
-        double num2 = pedirNúmero();
+        double num2 = pedirNumero();
         // Mostramos el menú y guardamos la opción que devuelve
         int opcion = mostrarMenu();
         // realizamos la operación solicitada
@@ -15,7 +15,7 @@ public class EjemplosMetodos {
 
     }
 
-    public static double pedirNúmero() {
+    public static double pedirNumero() {
         Scanner teclado = new Scanner(System.in);
         System.out.print("Introduce un número: ");
         return teclado.nextDouble();
@@ -49,8 +49,7 @@ public class EjemplosMetodos {
         System.out.println("3. Multiplicación");
         System.out.println("4. División");
         System.out.println("Elige una de las opciones (1-4)");
-        int opcion = teclado.nextInt();
-        return opcion;
+        return teclado.nextInt();
     }
 
     public static void realizarOperacion(int opcion, double numero1, double numero2) {
