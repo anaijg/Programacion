@@ -20,6 +20,9 @@ public class Edificio {
     }
 
     public void setPlantas(int plantas) {
+        if (plantas > 4) {
+
+        }
         this.plantas = plantas;
     }
 

@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Ejercicio16String {
-    public static Scanner teclado = new Scanner(System.in); // así puedo utilizar este Scanner en toda la clase
+    public static final Scanner teclado = new Scanner(System.in); // así puedo utilizar este Scanner en toda la clase
     public static void main(String[] args) {
         jugar();
     }
@@ -27,8 +27,8 @@ public class Ejercicio16String {
     public static void contar(String[] palabras) {
         String palabra = pedirTexto("Introduce una palabra: ");
         int contador = 0;
-        for (int i = 0; i < palabras.length; i++) {
-            if (palabra.equals(palabras[i])) {
+        for (String s : palabras) {
+            if (palabra.equals(s)) {
                 contador++;
             }
         }
@@ -58,7 +58,7 @@ public class Ejercicio16String {
         String[] palabras = lista.split(" ");
         System.out.println(Arrays.toString(palabras));
 
-        int opcion = 0;
+        int opcion;
         do {
             System.out.println("1. Contar\n2. Modificar\n3. Eliminar\n4. Mostrar\n5. Salir");
             System.out.println("Selecciona una opción (1-5)");
