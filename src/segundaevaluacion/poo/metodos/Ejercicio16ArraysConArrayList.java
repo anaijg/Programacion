@@ -1,6 +1,5 @@
 package segundaevaluacion.poo.metodos;
 
-import java.security.spec.RSAOtherPrimeInfo;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -39,9 +38,9 @@ public class Ejercicio16ArraysConArrayList {
                 case 1:
                     //Añadir número al final: pide un número y lo añade al final del array.
                     // para tener un poco más de juego, metemos 5 números en el arraylist
-                    for (int i = 0; i < 5; i++) {
+                    //for (int i = 0; i < 5; i++) {
                         numeros = añadirAlFinal(numeros);
-                    }
+                    //}
                     break;
                 case 2:
                     // imprimimos el arraylist
@@ -49,15 +48,11 @@ public class Ejercicio16ArraysConArrayList {
                     break;
                 case 3:
                     //Añadir número en una posición: pide un número y una posición, y si la posición existe en el array lo añade en esa posición (la posición se pide a partir de 1).
-                    numero = pedirNumero("Introduce número");
-                    indice = pedirNumero("¿En qué indice quieres que lo ponga?");
-                    if(indice <= numeros.size() - 1 && indice >= 0) {
-                        numeros.add(indice,numero);
-                    }
+                    añadirEnPosicion(numeros);
                     break;
                 case 4:
                     //Longitud del array: muestra el tamaño del array.
-                    System.out.println("Tamaño del array: " + numeros.size());
+                    mostrarTamaño(numeros);
                     break;
                 case 5:
                     //Eliminar el último número: muestra el último número del array y lo borra.
@@ -69,25 +64,11 @@ public class Ejercicio16ArraysConArrayList {
                     break;
                 case 7:
                     //Contar números: pide un número y te dice cuántas veces aparece en el array.
-                    numero = pedirNumero("Dime el número que quieres contar");
-                    int contador = 0;
-                    for (Integer elemento: numeros) {
-                        if (elemento == numero) {
-                            contador++;
-                        }
-                    }
-                    System.out.println("El número " + numero + " aparece " + contador + " veces.");
+                    contarNumeros(numeros);
                     break;
                 case 8:
                     //Posiciones de un número: pide un número y te dice en que posiciones está.
-                    ArrayList<Integer> posiciones = new ArrayList<>();
-                    numero = pedirNumero("Dime el número que quieres buscar: ");
-                    for (int i = 0; i < numeros.size(); i++) {
-                        if (numeros.get(i) == numero) {
-                            posiciones.add(i);
-                        }
-                    }
-                    System.out.println("El número " + numero + " aparece en las posiciones " + indice);
+                    contarPosiciones(numeros);
                     break;
                 case 9:
                     break;
@@ -97,6 +78,38 @@ public class Ejercicio16ArraysConArrayList {
 
         } while (opcion != 9);
 
+    }
+
+    public static void contarPosiciones(ArrayList<Integer> numeros) {
+        ArrayList<Integer> posiciones = new ArrayList<>();
+        int numero = pedirNumero("Dime el número que quieres buscar: ");
+        for (int i = 0; i < numeros.size(); i++) {
+            if (numeros.get(i) == numero) {
+                posiciones.add(i);
+            }
+        }
+        System.out.println("El número " + numero + " aparece en las posiciones " + posiciones);
+    }
+    public static void contarNumeros(ArrayList<Integer> numeros) {
+        int numero = pedirNumero("Dime el número que quieres contar");
+        int contador = 0;
+        for (Integer elemento: numeros) {
+            if (elemento == numero) {
+                contador++;
+            }
+        }
+        System.out.println("El número " + numero + " aparece " + contador + " veces.");
+    }
+    public static void mostrarTamaño(ArrayList<Integer> numeros) {
+        System.out.println("Tamaño del array: " + numeros.size());
+    }
+
+    public static void añadirEnPosicion(ArrayList<Integer> numeros ){
+        int numero = pedirNumero("Introduce número");
+        int indice = pedirNumero("¿En qué indice quieres que lo ponga?");
+        if(indice <= numeros.size() - 1 && indice >= 0) {
+            numeros.add(indice,numero);
+        }
     }
 
     public static void eliminarNumero(ArrayList<Integer> numeros) {
