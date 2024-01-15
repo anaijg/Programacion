@@ -55,10 +55,11 @@ public class Ejercicio01ConFor {
         ArrayList<Integer> arrayList = new ArrayList<>();
         arrayList.addAll(coleccion); // puedo meter en el arraylist toda la colección
         // ahora sí que la puedo recorrer y eliminar los elementos
-        for (int i = 0; i < coleccion.size(); i++) {
+        for (int i = 0; i < coleccion.size() - 1; i++) {
+            System.out.println(i);
             if (arrayList.get(i) % 3 == 0) {
                 arrayList.remove(i); // este remove también se puede hacer con el foreach pero haciendo otra colección
-                i--; // para que vuelva a la posición de antes
+                //i--; // para que vuelva a la posición de antes
             }
         }
         System.out.println(coleccion);
