@@ -9,22 +9,22 @@ mplementar un programa donde se crean cinco objetos Académico, que se insertan 
 public class Main {
     public static void main(String[] args) {
         // crear cinco académicos y meterlos en un mapa
-        Academico academico1 = new Academico("A. Perez-Reverte", 2003);
-        Academico academico2 = new Academico("Alvaro Pombo", 2004);
-        Academico academico3 = new Academico("José Manuel Blecua", 2006);
-        Academico academico4 = new Academico("Pedro R. García Barreno", 2006);
-        Academico academico5 = new Academico("José Mª Merino", 2009);
 
-
+        Academico academico1 = crearAcademico("A. Perez-Reverte", 2003);
+        Academico academico2 = crearAcademico("Alvaro Pombo", 2004);
+        Academico academico3 = crearAcademico("José Manuel Blecua", 2006);
+        Academico academico4 = crearAcademico("Pedro R. García Barreno", 2006);
+        Academico academico5 = crearAcademico("José Mª Merino", 2009);
 
         HashMap<Character, Academico> academia = new HashMap<>();
         // me piden que inserte los académicos con un métod0
+        // creo una  variable de tipo boolean para ver si se ha podido insertar o no
 
-        academia.put('T', academico1);
-        academia.put('t', academico2);
-        academia.put('A', academico3);
-        academia.put('E', academico4);
-        academia.put('i', academico4);
+        nuevoAcadémico(academia, academico1, 'T');
+        nuevoAcadémico(academia,academico2, 't');
+        nuevoAcadémico(academia, academico3, 'A');
+        nuevoAcadémico(academia, academico4, 'E');
+        nuevoAcadémico(academia, academico5, 'i');
 
         //System.out.println(academia);
         //imprimirAcadémico(academico2);
@@ -47,7 +47,20 @@ public class Main {
         }
     }
 
-    static boolean nuevoAcadémico(Map<Character, Academico> academia, Academico nuevo, Character letra) {
-        return false;
+    public static boolean nuevoAcadémico(Map<Character, Academico> academia, Academico nuevo, Character letra) {
+        // tenemos que insertar el académico en el mapa comprobando antes si la letra lo es
+        if (Character.isLetter(letra)) {
+            // inserto el académico y devuelvo true
+            academia.put(letra, nuevo);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    // vamos a crear los académicos con un método
+    public static Academico crearAcademico(String nombre, int año) {
+        Academico academico = new Academico(nombre, año);
+        return academico;
     }
 }
