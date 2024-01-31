@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class CuentaCorriente {
     // ATRIBUTOS
     // que almacena los datos: DNI, nombre del titular y saldo.
-    private String dni;
-    private String nombre;
+    String dni;
+    public String nombre;
     private double saldo;
     // Modificar la clase CuentaCorriente para que pueda disponer de un objeto Gestor. Escribir los métodos necesarios para consultar qué gestor tiene una cuenta corriente y también para poder cambiarlo..
     private Gestor gestor;

@@ -38,6 +38,11 @@ public class Main {
         cuentaCorriente1.setBanco("Santander");
         System.out.println(cuentaCorriente1);
 
+        // comprobamos modificadores de acceso de los atributos de CuentaCorriente
+        System.out.println(cuentaCorriente1.dni); // porque estoy en el mismo paquete
+        //System.out.println(cuentaCorriente1.saldo); -> no, es private
+        System.out.println(cuentaCorriente1.nombre); // es public
+
 
 
     }

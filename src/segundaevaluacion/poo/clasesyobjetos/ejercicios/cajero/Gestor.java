@@ -2,9 +2,9 @@ package segundaevaluacion.poo.clasesyobjetos.ejercicios.cajero;
 
 public class Gestor {
     // nombre, teléfono y el importe máximo autorizado con el que pueden operar.
-    private String nombre;
+    public String nombre;
     private String telefono;
-    private double importeMaximoAutorizado;
+    double importeMaximoAutorizado; // default package, protección de paquete
 
     // constructor/es
 
