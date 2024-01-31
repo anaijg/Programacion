@@ -13,4 +13,4 @@ Ambas clases tienen constructores parametrizados,  los getters y setters corresp
 3. Crea una clase Main con un método  main dentro del cual debes crear:
    1. 	Una instancia de la clase Usuario llamada propietario ((login: “demo”, nombre: “Ale”, apellidos “Chim Pom”)
    2. 	Una instancia de la clase Cuenta (“123456”, 1000, propietario).
-   3Un método estático mostrarCuenta, que recibe una cuenta y muestra toda la información de la cuenta.
+   3. Un método estático mostrarCuenta, que recibe una cuenta y muestra toda la información de la cuenta.
