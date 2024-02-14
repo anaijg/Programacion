@@ -22,6 +22,9 @@ public class Main {
         // setter de la propia clase Programador
         programador.setLenguajes(new String[]{"Java", "SQL", "HTML"});
         System.out.println(programador);
+        // probamos el método añadirLenguaje de Programador (ver apuntes pag. 8)
+        programador.añadirLenguaje("Ruby");
+        System.out.println(programador);
 
     }
 }
