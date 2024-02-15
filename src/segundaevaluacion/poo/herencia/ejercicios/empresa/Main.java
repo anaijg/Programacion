@@ -1,6 +1,7 @@
 package segundaevaluacion.poo.herencia.ejercicios.empresa;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,6 +19,25 @@ public class Main {
         cliente1.mostrar();
         Cliente cliente2 = new Cliente("Chito", LocalDate.of(2005, 5, 31), "123A567");
         cliente2.mostrar();
+
+        // Probamos la clase Directivo.
+        Directivo directivo = new Directivo("Colon", LocalDate.of(2005,04,14),60000,Categoria.CIO);
+        System.out.println("Directivo sin plus: ");
+        directivo.mostrar();
+        System.out.println("Directivo con plus: ");
+        //directivo.asignarPlus();
+        directivo.mostrar();
+
+        // Probamos la clase Empresa
+        ArrayList<Empleado> empleados = new ArrayList<>();
+        empleados.add(empleado);
+
+        ArrayList<Cliente> clientes = new ArrayList<>();
+        clientes.add(cliente1);
+        clientes.add(cliente2);
+
+        Empresa empresa = new Empresa("Frnandy",empleados,clientes);
+        empresa.mostrar();
 
     }
 }
