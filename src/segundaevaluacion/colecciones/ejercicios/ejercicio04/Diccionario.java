@@ -15,6 +15,7 @@ public class Diccionario {
     //El Diccionario construye la propiedad diccionario como un HashMap vacío.
 
     public Diccionario() {
+
         this.diccionario = new HashMap<>();
     }
 
@@ -29,12 +30,14 @@ public class Diccionario {
     //nuevoPar – Este método recibirá una palabra en español y otra en inglés y
     //las introducirá en el HashMap como nuevo par clave-valor.
     public void nuevoPar(String español, String inglés) {
+
         diccionario.put(español, inglés);
     }
 
     //traduce – Este método recibirá una palabra en español, la buscará en la
     //propiedad diccionario y devolverá su correspondiente valor en inglés.
     public String traduce(String español) {
+
         return diccionario.get(español);
     }
 
