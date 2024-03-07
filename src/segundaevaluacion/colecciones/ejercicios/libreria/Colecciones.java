@@ -83,7 +83,7 @@ public class Colecciones {
     public static void imprimirMapa() {
         Map<String, Editorial> premiadas = obtenerEditorialesPremiadas();
         //System.out.println("Feote: " + premiadas);
-        premiadas.entrySet().stream().sorted();
+
         System.out.println("Editoriales premiadas:  ");
         for (Map.Entry<String, Editorial> lineaMapa: premiadas.entrySet()) {
             System.out.println(lineaMapa.getKey() + "\t\t\t" + lineaMapa.getValue().getNombre());
