@@ -21,9 +21,9 @@ public class Main {
         //Collections.sort(socios);
 
         // e imprimimos el arraylist; se supone que tienen que aparecer ordenados por fecha de nacimiento, porque eso es lo que hemos indicado en el método compareTo
-        for (Socio socio: socios) {
+       /* for (Socio socio: socios) {
             System.out.println(socio);
-        }
+        }*/
         // efectivamente, se han ordenado por fecha de nacimiento, de más reciente a más antiguo
 
         // ahora vamos a probar esta nueva clase
@@ -36,23 +36,19 @@ public class Main {
         }
         // ahora para ordenar utilizando comparator debemos crear un objeto de la clase comparadora
        CompararFechasNacimiento comparador = new CompararFechasNacimiento();
-        // y para ordenar volvemos a llamar a Collections.sort pero pasándole esta vez la lista y el comparador
+
         socios.sort(comparador);
         // volvemos a imprimir
-        System.out.println("\nOrdenados por fecha de nacimiento");
-        for (Socio socio: socios) {
-            System.out.println(socio);
-        }
+        System.out.println("\nOrdenados por fecha de nacimiento de más antiguo a más reciente");
+        imprimirSocios(socios);
 
         // ahora ordenamos en orden inverso
+        System.out.println("\nAhora en orden inverso: ");
+
         socios.sort(comparador.reversed());
 
-        System.out.println("\nOrden inverso:");
         imprimirSocios(socios);
 
-        socios.sort(new CompararApellidos());
-        System.out.println("\nOrden alfabético de apellidos");
-        imprimirSocios(socios);
 
     }
 

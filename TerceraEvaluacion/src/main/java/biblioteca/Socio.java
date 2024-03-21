@@ -47,6 +47,7 @@ public class Socio{
                 '}';
     }
 
+
     // tenemos que establecer como "orden natural" el apellido
 
 

@@ -7,7 +7,7 @@ Crea una clase denominada Hotel con los atributos idHotel (int), zona(enum), y p
 Añade métodos para poder crear un hotel, para imprimir los datos de un hotel y para actualizar el precio de un hotel, controlando que el nuevo precio esté dentro de los valores establecidos.
 
  */
-public class Hotel {
+public class Hotel implements Comparable{
     // atributos
     private int idHotel;
     private Zona zona;
@@ -74,5 +74,19 @@ public class Hotel {
     @Override
     public int hashCode() {
         return Objects.hash(idHotel, zona, precio);
+    }
+
+    // Queremos ordenar una serie de hoteles por precio de mayor a menor. Adapta el código para poder realizar tal ordenación implementando la interfaz Comparable.
+    @Override
+    public int compareTo(Object o) {
+        // casting de Object a Hotel
+        Hotel h = (Hotel) o;
+        if (this.precio > h.precio) {
+            return -1;
+        } else if (this.precio < h.precio) {
+            return 1;
+        } else {
+            return 0;
+        }
     }
 }
