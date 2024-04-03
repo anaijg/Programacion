@@ -16,5 +16,6 @@ public class Main {
 
         // una vez que has "rellenado" el método de la clase anónima, ya tienes un objeto con el que llamarlo
         hm.HolaMundo();
+        //prueba
     }
 }
