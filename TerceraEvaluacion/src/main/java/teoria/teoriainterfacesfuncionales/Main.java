@@ -1,4 +1,4 @@
-package lambda.teoriainterfacesfuncionales;
+package teoria.teoriainterfacesfuncionales;
 
 public class Main {
     public static void main(String[] args) {
