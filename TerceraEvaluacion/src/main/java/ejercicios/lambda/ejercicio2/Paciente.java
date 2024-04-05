@@ -1,5 +1,7 @@
 package ejercicios.lambda.ejercicio2;
 
+import java.util.Arrays;
+
 public class Paciente {
     private String nombre;
     private int edad;
@@ -43,5 +45,10 @@ public class Paciente {
 
     public void setSíntomas (String[]síntomas){
         this.síntomas = síntomas;
+    }
+
+    @Override
+    public String toString() {
+        return "\n" + nombre + " | " + edad + " | " + Arrays.toString(síntomas);
     }
 }
