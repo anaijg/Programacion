@@ -65,6 +65,7 @@ public class Ejercicio1Main {
 
 
         //04.- Crea una lista de números enteros y utiliza una expresión lambda para encontrar la suma de los números pares.
+        System.out.println("\nEjercicio 4:\n============");
         Ejercicio4 e4 = lista12 -> {
             int suma = 0;
             for (Integer numero: lista12) {
@@ -80,6 +81,7 @@ public class Ejercicio1Main {
 
 
         //05.- Crea una lista de objetos de tipo Persona (con atributos nombre y edad) y utiliza una expresión lambda para encontrar a la persona más joven.
+        System.out.println("\nEjercicio 5:\n============");
         List<Persona> personas = new ArrayList<>();
         personas.add(new Persona("Carlos", 29));
         personas.add(new Persona("Óscar", 15));
@@ -92,6 +94,7 @@ public class Ejercicio1Main {
 
         // 1) Ordenamos por edades de menor a mayor
         // además, por primera vez vamos a utilizar la versión más corta posible
+        System.out.println("01");
         personas.sort((p1, p2) -> p1.getEdad() - p2.getEdad());
         System.out.println("\nOrdenados por edad (de menor a mayor)");
         //System.out.println(personas);
@@ -101,17 +104,25 @@ public class Ejercicio1Main {
         //System.out.println("\n\n" + personas);
 
         // 2) Cogemos el que haya quedado primero
+        System.out.println("\n02");
         System.out.println("Persona más joven: " + personas.get(0));
 
         // si nos pidieran, sin volver a ordenar, el último elemento de la lista
         //System.out.println(personas.get(personas.size() - 1));
 
-        //06.- Crea una lista de objetos de tipo Persona (con atributos nombre y edad) y utiliza una expresión lambda para ordenar la lista por edad, de menor a mayor.
-        // hecho en el ejercicio anterior
+        System.out.println("\nEjercicio 6:\n============");
+        //06.- Crea una lista de objetos de tipo Persona (con atributos nombre y edad) y utiliza una expresión lambda para ordenar la lista por edad, de menor a mayor
 
+        // hecho en el ejercicio anterior
+        personas.sort((p1, p2) -> p1.getEdad() - p2.getEdad());
+        System.out.println(personas);
 
         //07.- Crea una lista de objetos de tipo Persona y utiliza una expresión lambda para filtrar las personas que tienen una edad mayor a 30.
+        System.out.println("\nEjercicio 7:\n============");
         // volveremos cuando sepamos cómo se hace un predicado
+        personas.stream()
+                .filter(persona -> persona.getEdad() > 30)
+                .forEach(persona -> System.out.println(persona));
 
 
         //08.- Crea una lista de objetos de tipo Producto (con atributos nombre y precio) y utiliza una expresión lambda para calcular el precio total de la lista.
