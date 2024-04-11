@@ -124,15 +124,49 @@ public class Ejercicio1Main {
                 .filter(persona -> persona.getEdad() > 30)
                 .forEach(persona -> System.out.println(persona));
 
-
         //08.- Crea una lista de objetos de tipo Producto (con atributos nombre y precio) y utiliza una expresión lambda para calcular el precio total de la lista.
+        System.out.println("\nEjercicio 8:\n============");
+            List<Producto> productos = new ArrayList<>();
+            productos.add(new Producto("Pan", 0.99));
+            productos.add(new Producto("Leche", 1.1));
+            productos.add(new Producto("Jamón", 1));
+            productos.add(new Producto("Estropajo", 2.15));
+            productos.add(new Producto("Donuts", 1.5));
+            productos.add(new Producto("Doritos", 1.25));
+            productos.add(new Producto("Coca-cola", 1.25));
+            productos.add(new Producto("Aceite", 10.5));
 
+            // hemos creado una interfaz funcional con un único método abstracto
+            Ejercicio8 e8 = lista8 -> {
+                double total = 0;
+                for (Producto item : lista8) {
+                    total = total + item.getPrecio();
+                }
+                return total;
+            };
+            // ahora tengo que llamar al método que me hace el cálculo pasándole la lista de productos
+            double resultado = e8.calcularTotal(productos);
+        System.out.printf("Total: %.2f\n", resultado);
 
+        // otra forma de hacerlo mucho más corto es con stream - map - sum
+        resultado =  productos.stream()
+                            .mapToDouble(producto -> producto.getPrecio())
+                            .sum();
+        System.out.printf("Otra forma: %.2f\n", resultado);
 
         //09.- Crea una lista de objetos de tipo Producto y utiliza una expresión lambda para ordenar la lista por precio, de mayor a menor.
-
+        // no hay que hacer una interfaz funcional, sino que aprovechamos la que tiene Java: Comparator
+        System.out.println("\nEjercicio 9:\n============");
+        productos.sort((p1, p2) -> (int) (p2.getPrecio() * 100 - p1.getPrecio() * 100)); // REGLA/TRUCO: cuando lo que hay que ordenar son números decimales multiplicamos por 100 (o por 1000 si son 3 decimales, etc)
+        productos.forEach(producto -> System.out.println(producto));
 
 
         //10.- Crea una lista de objetos de tipo Producto y utiliza una expresión lambda para filtrar los productos que tienen un precio menor a 10
+        System.out.println("\nEjercicio 10:\n============");
+        productos.stream()
+                .filter(producto -> producto.getPrecio() < 10)
+                .forEach(producto -> System.out.println(producto));
+
+
     }
 }
