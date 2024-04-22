@@ -1,4 +1,4 @@
-package excepciones.videos.v1excepciones;
+package teoria.v1excepciones;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
