@@ -57,7 +57,61 @@ public class EjemploFile {
             System.out.println("El fichero no se ha podido eliminar");
         }
 
+        // CREAR UN DIRECTORIO
+        // 1) Primero, creamos la ruta a partir de la cual queremos crear ese directorio
+        // esto ya lo tenemos, en la variable String ruta
 
+        // 2) Creamos el directorio/s, guardando el resultado
+        try {
+            File directorio = new File(ruta + "carpeta");
+            boolean creada = directorio.mkdir();
+            if (creada) {
+                System.out.println("Oki. Carpeta creada");
+            } else {
+                System.out.println("Por lo que sea no se ha podido crear (probablemente ya exista)");
+            }
+        } catch (Exception e) {
+            System.out.println("Ha ocurrido una excepción. " + e.getMessage());
+        }
+
+
+        // RENOMBRAR: EN LINUX mv sirve tanto para renombrar como para cambiar de sitio (porque cuando haces eso en realidad para el sistema operativo el nombre de cada fichero es su ruta completa).
+        // pues aquí lo mismo, pero con el método renameTo
+        // ejemplo: vamos a renombrar fichero.txt por fichero.md
+        try {
+            // 1) Creo un objeto file con el nuevo nombre
+            File nuevoNombre = new File(ruta + "fichero.md");
+            // 2) Creo un objeto file con el fichero en su sitio actual o con su nombre actual
+            File nombreActual = new File(ruta + "fichero.txt");
+            // 3) renombramos el fichero
+            boolean renombrado = nombreActual.renameTo(nuevoNombre);
+            if(renombrado) {
+                System.out.println("Nombre cambiado.");
+            } else {
+                System.out.println("Por lo que sea sigue con el mismo nombre.");
+            }
+
+        } catch (Exception e) {
+            System.out.println("Ha ocurrido una excepción. " + e.getMessage());
+        }
+
+        // ahora metemos el fichero fichero.md en el directorio carpeta
+        try {
+            // 1) Objeto con la nueva ruta
+            File nuevoSitio = new File(ruta + "carpeta\\fichero.md");
+            // 2) Objeto con el fichero donde está actualmente
+            File sitioActual = new File(ruta + "fichero.md");
+            // 3) aplicamos el renameTo al fichero actual
+            boolean movido = sitioActual.renameTo(nuevoSitio);
+            if(movido) {
+                System.out.println("Oki. Reubicado.");
+            } else {
+                System.out.println("Por lo que sea no ha podido moverse.");
+            }
+
+        } catch (Exception e) {
+            System.out.println("Ha ocurrido una excepción. " + e.getMessage());
+        }
 
     }
 }
