@@ -18,6 +18,11 @@ public class Ejercicio4 {
         File fichero = new File(ruta);
         if (fichero.exists()) {
             boolean borrado = fichero.delete();
+            if (borrado) {
+                System.out.println("Fichero borrado.");
+            } else {
+                System.out.println("No se ha podido borrar el fichero.");
+            }
         } else {
             System.out.println("No se ha podido borrar el fichero.");
         }
